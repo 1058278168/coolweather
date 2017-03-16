@@ -37,8 +37,8 @@ public class WeatherActivity extends AppCompatActivity {
     private ImageView bingPicImg;
 
     @Override
-    public void onCreate(Bundle savedInstanceState, PersistableBundle persistentState) {
-        super.onCreate(savedInstanceState, persistentState);
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weather);
         weatherLayout = (ScrollView) findViewById(R.id.weather_layout);
         titleCity = (TextView) findViewById(R.id.title_city);
@@ -106,7 +106,7 @@ public class WeatherActivity extends AppCompatActivity {
      */
     private void requestWeather(String weatherId) {
         String weatherUrl = "http://guolin.tech/api/weather?cityId=" + weatherId +
-                "&key=c044de1547514a4eab480b7334c55bd1";
+                "&key=bc0418b57b2d4918819d3974ac1285d9";
         HttpUtil.sendOkHttpRequest(weatherUrl, new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
